@@ -1,0 +1,24 @@
+/// Fonts
+$title-font: normal 700 2.25rem/3rem "Inter-Bold";
+$section-title-font: normal 400 2rem/2.5rem "Inter-Regular";
+$text-font: normal 400 1.125rem/2.25rem "Inter-Regular";
+$form-font: normal 400 1.25rem/2.9rem "Inter-Regular";
+
+
+
+/// Background dark theme color
+/// @type Color
+$dark-color: #1c1c1c !default;
+
+/// Background light theme color
+/// @type Color
+$light-color: #ffffff !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #ffa500 !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1440px !default;
+

@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+  font-size: 1em;
+
+  background-color: $dark-color;
+}
+
+.html-light {
+  background-color: $light-color;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  text-decoration: none;
+  color: $light-color;
+
+  @extend %transition;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $brand-color;
+  }
+}
