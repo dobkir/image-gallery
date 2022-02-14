@@ -1,8 +1,8 @@
-.search-field, .logo, a {
+.theme-switcher, .search-button, .search-field, .logo, a {
   transition: all 0.4s ease-in-out;
 }
 
-.copyright, .footer, .logo-section,
+.footer, .logo-section,
 .search-section, .container-header {
   display: flex;
   justify-content: space-between;
@@ -437,7 +437,7 @@ a:hover, a:focus, a:active {
 }
 
 .header-title {
-  font: normal 700 2.25rem/3rem "Inter-Bold";
+  font: normal 700 2rem/2.5rem "Inter-Bold";
   color: #ffa500;
 }
 
@@ -446,7 +446,7 @@ a:hover, a:focus, a:active {
 }
 
 .gallery-title {
-  font: normal 400 2rem/2.5rem "Inter-Regular";
+  font: normal 400 1.5rem/2rem "Inter-Regular";
 }
 
 .search-field {
@@ -484,18 +484,18 @@ a:hover, a:focus, a:active {
   top: 0;
   z-index: 1;
   width: 100%;
-  height: 90px;
+  height: 60px;
   background: #1c1c1c;
-  outline: 0.5rem solid #ffa500;
+  outline: 4px solid #ffa500;
 }
 
 .header-light {
   background: #ffffff;
-  outline: 0.5rem solid #1c1c1c;
+  outline-color: #1c1c1c;
 }
 
 .container-header {
-  min-height: 90px;
+  min-height: 60px;
 }
 @media (max-width: 768px) {
   .container-header {
@@ -512,8 +512,8 @@ a:hover, a:focus, a:active {
 }
 
 .logo {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #ffa500;
   background-position: center;
@@ -521,6 +521,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/favicon/gallery96x96.png");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .logo:hover, .logo:focus {
   background-color: #ffd280;
@@ -530,13 +532,13 @@ a:hover, a:focus, a:active {
 }
 @media (max-width: 768px) {
   .logo {
-    width: 50px;
+    width: 45px;
   }
 }
 @media (max-width: 320px) {
   .logo {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -548,6 +550,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/favicon/gallery96x96.png");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .logo-light:hover, .logo-light:focus {
   background-color: #ffd280;
@@ -557,17 +561,17 @@ a:hover, a:focus, a:active {
 }
 
 .header-title {
-  margin: 0 0 0 2.2rem;
+  margin: 0 0 0 2rem;
 }
 
 .search-form {
   position: relative;
   width: 380px;
-  height: 50px;
+  height: 40px;
 }
 
 .search-field {
-  width: 100;
+  width: 100%;
   height: 100%;
   padding: 8px 62px 8px 12px;
   border: 1px solid #9c9c9c;
@@ -590,6 +594,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/svg/search.svg");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .search-field:focus + .search-button:hover, .search-field:focus + .search-button:focus {
   background-color: #ffd280;
@@ -600,7 +606,7 @@ a:hover, a:focus, a:active {
 
 .search-button {
   position: absolute;
-  right: 2.5rem;
+  right: 1rem;
   top: 50%;
   height: 28px;
   width: 28px;
@@ -611,6 +617,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/svg/search.svg");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   border: none;
   cursor: pointer;
   transform: translateY(-50%);
@@ -630,6 +638,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/svg/search.svg");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .search-button-light:hover, .search-button-light:focus {
   background-color: #ffd280;
@@ -649,6 +659,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/svg/light-theme-icon.svg");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   cursor: pointer;
 }
 .theme-switcher:hover, .theme-switcher:focus {
@@ -671,6 +683,8 @@ a:hover, a:focus, a:active {
   mask-image: url("../assets/svg/dark-theme-icon.svg");
   -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .theme-switcher-light:hover, .theme-switcher-light:focus {
   background-color: #ffd280;
@@ -686,30 +700,31 @@ a:hover, a:focus, a:active {
 .container-main {
   flex-direction: column;
   align-items: center;
-  margin-top: -5.63rem;
-  border-top: 5.63rem solid transparent;
+  margin-top: -5rem;
+  border-top: 5rem solid transparent;
+  border-bottom: 4rem solid transparent;
   width: 100%;
   height: auto;
 }
 
 .gallery-title {
-  margin: 8rem auto auto 0;
+  margin: 5rem auto auto 0;
 }
 
 .gallery {
   flex-wrap: wrap;
-  gap: 1.56rem;
-  margin: 2rem auto 0;
+  gap: 1rem;
+  margin: 1rem auto 0;
 }
 @media (max-width: 768px) {
   .gallery {
-    margin: 3.5rem auto 0;
+    margin: 0.5rem auto 0;
   }
 }
 
 .gallery-image {
-  max-width: 450px;
-  max-height: 360px;
+  max-width: 456px;
+  max-height: 320px;
 }
 @media (max-width: 480px) {
   .gallery-image {
@@ -725,7 +740,14 @@ a:hover, a:focus, a:active {
 }
 
 .footer {
-  height: 150px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1c1c1c;
+  outline: 2px solid #ffa500;
+  width: 100%;
+  height: 40px;
 }
 @media (max-width: 768px) {
   .footer {
@@ -734,8 +756,14 @@ a:hover, a:focus, a:active {
   }
 }
 
+.footer-light {
+  background: #ffffff;
+  outline-color: #1c1c1c;
+}
+
 .copyright {
-  width: 188px;
+  display: inline-flex;
+  align-items: center;
   padding-right: 20px;
 }
 .copyright > small {
@@ -749,10 +777,43 @@ a:hover, a:focus, a:active {
   }
 }
 
-@media (max-width: 768px) {
-  .rsschool-link {
-    margin-top: 1rem;
-  }
+.github-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem 0 1.5rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #ffffff;
+  background-position: 0 50%;
+  -webkit-mask-image: url("../assets/svg/github.svg");
+  mask-image: url("../assets/svg/github.svg");
+  -webkit-mask-size: 24px;
+  mask-size: 24px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.github-icon:hover, .github-icon:focus {
+  background-color: #ffd280;
+}
+.github-icon:active {
+  background-color: #cc8400;
+}
+
+.github-icon-light {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #1c1c1c;
+  background-position: 0 50%;
+  -webkit-mask-image: url("../assets/svg/github.svg");
+  mask-image: url("../assets/svg/github.svg");
+  -webkit-mask-size: 24px;
+  mask-size: 24px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.github-icon-light:hover, .github-icon-light:focus {
+  background-color: #ffd280;
+}
+.github-icon-light:active {
+  background-color: #cc8400;
 }
 
 .loader {

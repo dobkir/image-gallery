@@ -4,19 +4,19 @@
   top: 0;
   z-index: 1;
   width: 100%;
-  height: 90px;
+  height: 60px;
 
   background: $dark-color;
-  outline: 0.5rem solid $brand-color;
+  outline: 4px solid $brand-color;
 }
 
 .header-light {
   background: $light-color;
-  outline: 0.5rem solid $dark-color;
+  outline-color: $dark-color;
 }
 
 .container-header {
-  min-height: 90px;
+  min-height: 60px;
   @extend %flex-centered-items-space-btw;
 
   @include media-tablet-portrait {
@@ -37,20 +37,20 @@
 }
 
 .logo {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
 
   @include mask("../assets/favicon/gallery96x96.png");
 
   @extend %transition;
 
   @include media-tablet-portrait {
-    width: 50px;
+    width: 45px;
   }
 
   @include media-iphone5 {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -59,7 +59,7 @@
 }
 
 .header-title {
-  margin: 0 0 0 2.2rem;
+  margin: 0 0 0 2rem;
 }
 
 .search-form {
@@ -67,11 +67,11 @@
 
   @extend %flex-centered;
   width: 380px;
-  height: 50px;
+  height: 40px;
 }
 
 .search-field {
-  width: 100;
+  width: 100%;
   height: 100%;
   padding: 8px 62px 8px 12px;
 
@@ -99,7 +99,7 @@
 
 .search-button {
   position: absolute;
-  right: 2.5rem;
+  right: 1rem;
   top: 50%;
 
   height: 28px;
@@ -110,6 +110,7 @@
   cursor: pointer;
 
   transform: translateY(-50%);
+  @extend %transition;
 }
 
 .search-button-light {
@@ -120,6 +121,8 @@
   width: 45px;
   height: 45px;
   margin: 0 0 0 2.2rem;
+
+  @extend %transition;
 
   @include mask("../assets/svg/light-theme-icon.svg");
   cursor: pointer;

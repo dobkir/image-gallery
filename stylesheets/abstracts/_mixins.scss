@@ -4,17 +4,20 @@
   $image-url,
   $mask-size: cover,
   $bg-color: $brand-color,
-  $hover-color: $brand-color
+  $hover-color: $brand-color,
+  $bg-position: center,
   ) {
   // If you don't want a blue square when clicking on svg on a mobile device
   // use the property '-webkit-tap-highlight-color'
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: $bg-color;
-  background-position: center;
+  background-position: $bg-position;
   -webkit-mask-image: url("#{$image-url}");
   mask-image: url("#{$image-url}");
   -webkit-mask-size: $mask-size;
   mask-size: $mask-size;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 
   &:hover,
   &:focus {

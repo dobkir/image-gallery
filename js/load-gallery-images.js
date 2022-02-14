@@ -12,7 +12,7 @@ function loadGalleryTitle(fetchingQuery) {
 }
 
 function loadGalleryImages(imageURL) {
-  const image = `<img class="gallery-image" src=${imageURL} alt="gallery image" width="450" height="320">`
+  const image = `<img class="gallery-image" src=${imageURL} alt="gallery image" width="456" height="320">`
   gallery.insertAdjacentHTML('beforeend', image)
 }
 

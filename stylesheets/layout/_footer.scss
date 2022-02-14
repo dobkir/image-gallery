@@ -1,6 +1,15 @@
 .footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: $dark-color;
+  outline: 2px solid $brand-color;
+
   @extend %flex-centered-items-space-btw;
-  height: 150px;
+  width: 100%;
+  height: 40px;
 
   @include media-tablet-portrait {
     flex-direction: column;
@@ -8,9 +17,14 @@
   }
 }
 
+.footer-light {
+  background: $light-color;
+  outline-color: $dark-color;
+}
+
 .copyright {
-  @extend %flex-centered-items-space-btw;
-  width: 188px;
+  display: inline-flex;
+  align-items: center;
   padding-right: 20px;
 
   >small {
@@ -24,8 +38,14 @@
   }
 }
 
-.rsschool-link {
-  @include media-tablet-portrait {
-    margin-top: 1rem;
-  }
+.github-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem 0 1.5rem;
+
+  @include mask("../assets/svg/github.svg", 24px, $light-color, $brand-color, 0 50%);
+}
+
+.github-icon-light {
+  @include mask("../assets/svg/github.svg", 24px, $dark-color, $brand-color, 0 50%);
 }

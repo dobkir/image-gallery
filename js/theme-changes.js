@@ -7,6 +7,8 @@ const lightTheme = {
   'logo': 'logo-light',
   'search-button': 'search-button-light',
   'theme-switcher': 'theme-switcher-light',
+  'footer': 'footer-light',
+  'github-icon': 'github-icon-light',
 }
 
 export default lightTheme;
