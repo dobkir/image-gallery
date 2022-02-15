@@ -6,6 +6,20 @@
   align-items: center;
   width: 380px;
   height: 40px;
+
+  @include media-tablet-portrait {
+    width: 320px;
+  }
+
+  @include media-this-project {
+    height: 35px;
+  }
+
+  @include phone-this-project {
+    margin: 0.5rem 0;
+    width: 275px;
+    height: 30px;
+  }
 }
 
 .search-field {
@@ -33,6 +47,10 @@
       @include mask("../assets/svg/search.svg", cover, $brand-color, $brand-color);
     }
   }
+
+  @include phone-this-project {
+    padding: 4px 48px 4px 10px;
+  }
 }
 
 .clear-button {
@@ -48,7 +66,7 @@
   outline: none;
   cursor: pointer;
 
-  transform: translateY(-50%);
+  transform: translateY(-48%);
   @extend %transition;
 
   &:hover,
@@ -62,6 +80,10 @@
     color: darken($brand-color, 10%);
 
     border-color: darken($brand-color, 10%);
+  }
+
+  @include media-tablet-portrait {
+    left: 0;
   }
 }
 
@@ -98,6 +120,11 @@
 
   transform: translateY(-50%);
   @extend %transition;
+
+  @include phone-this-project {
+    height: 22px;
+    width: 22px;
+  }
 }
 
 .search-button-light {

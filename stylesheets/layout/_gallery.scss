@@ -1,5 +1,9 @@
 .gallery-title {
   margin: 5rem auto auto 0;
+
+  @include media-this-project {
+    margin: 6rem auto auto 0;
+  }
 }
 
 .pagination {
@@ -7,10 +11,15 @@
   justify-content: space-between;
   align-items: center;
 
-  margin: 0 auto;
   width: 360px;
+  margin: 0 auto;
 
   overflow: hidden;
+
+  @include media-phone {
+    width: 280px;
+    margin: 10px auto 0;
+  }
 }
 
 .page-link,
@@ -21,7 +30,7 @@
 
 .total-pages {
   margin: 0 auto;
-  
+
   text-align: center;
 }
 
@@ -37,12 +46,12 @@
 }
 
 .gallery-image {
-  max-width: 456px;
-  max-height: 320px;
+  width: 456px;
+  height: 320px;
 
-  @include media-phone {
-    width: 90%;
-    height: 90%
+  @include media-tablet-landscape {
+    width: 297px;
+    height: 212px;
   }
 
   @include media-iphone5 {

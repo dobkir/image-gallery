@@ -60,9 +60,19 @@
   @media (max-width: 768px) { @content; }
 }
 
+// Media parameter for this project only
+@mixin media-this-project {
+  @media (max-width: 612px) { @content; }
+}
+
 // Portrait phones and smaller
 @mixin media-phone {
   @media (max-width: 480px) { @content; }
+}
+
+// Media parameter for this project only
+@mixin phone-this-project {
+  @media (max-width: 390px) { @content; }
 }
 
 // Iphone 5

@@ -10,11 +10,6 @@
 
   background: $dark-color;
   outline: 2px solid $brand-color;
-
-  @include media-tablet-portrait {
-    flex-direction: column;
-    line-height: 1.5rem;
-  }
 }
 
 .footer-light {
@@ -35,10 +30,9 @@
     font: inherit;
   }
 
-  @include media-tablet-portrait {
+  @include media-phone {
     width: 170px;
     padding: 0;
-    margin: 1.7rem auto 0;
   }
 }
 
@@ -53,3 +47,4 @@
 .github-icon-light {
   @include mask("../assets/svg/github.svg", 24px, $dark-color, $brand-color, 0 50%);
 }
+

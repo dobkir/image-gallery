@@ -8,7 +8,7 @@ let currentPage = 1
 async function fetchImages(query = currentQuery, page = currentPage) {
   const accessKey = '8EnJm5o8GKeVQ_y02NuOD2VtMkZxPLkEJ-TVkNjSaMs'
   toggleLoader()
-  let imagesPerPage = '9'
+  let imagesPerPage = 12
   let imageOrientation = 'landscape'
   let url = 'https://api.unsplash.com/search/photos?query=' +
     query +

@@ -22,6 +22,11 @@
 .header-title {
   font: $title-font;
   color: $brand-color;
+  white-space: nowrap;
+
+  @include media-tablet-portrait {
+    font: $title-tablet-font;
+  }
 }
 
 .header-title-light {
@@ -34,6 +39,10 @@
 
 .gallery-title {
   font: $section-title-font;
+
+  @include media-tablet-landscape {
+    font: $section-title-tablet-font;
+  }
 }
 
 .page-link,
