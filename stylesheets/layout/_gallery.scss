@@ -2,6 +2,29 @@
   margin: 5rem auto auto 0;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+  width: 360px;
+
+  overflow: hidden;
+}
+
+.page-link,
+.prev-page,
+.next-page {
+  cursor: pointer;
+}
+
+.total-pages {
+  margin: 0 auto;
+  
+  text-align: center;
+}
+
 .gallery {
   @extend %flex-centered;
   flex-wrap: wrap;

@@ -1,13 +1,19 @@
 import { loadGalleryTitle, loadGalleryImages, clearGallery, reportMissingData } from './load-gallery-images.js'
 import { toggleLoader } from './loader.js'
+import { showPagination } from './pagination.js'
 
-async function getData(query = 'latest') {
+let currentQuery = 'latest'
+let currentPage = 1
+
+async function fetchImages(query = currentQuery, page = currentPage) {
   const accessKey = '8EnJm5o8GKeVQ_y02NuOD2VtMkZxPLkEJ-TVkNjSaMs'
   toggleLoader()
   let imagesPerPage = '9'
   let imageOrientation = 'landscape'
   let url = 'https://api.unsplash.com/search/photos?query=' +
     query +
+    '&page=' +
+    page +
     '&per_page=' +
     imagesPerPage +
     '&orientation=' +
@@ -23,11 +29,17 @@ async function getData(query = 'latest') {
       return null
     } else {
       const data = await res.json()
+      const totalPages = data.total_pages
       const receivedImages = data.results
       clearGallery()
       if (receivedImages.length === 0) reportMissingData()
+      if (currentQuery != query) {
+        currentQuery = query
+        getCurrentPage(1)
+      }
       loadGalleryTitle(query)
-      receivedImages.map(image => loadGalleryImages(image.urls.regular))
+      showPagination(totalPages)
+      receivedImages.map(image => loadGalleryImages(image.urls.regular, image.alt_description))
       toggleLoader()
     }
 
@@ -38,4 +50,13 @@ async function getData(query = 'latest') {
   }
 }
 
-export { getData }
+function getNewQuery(newQuery) {
+  return fetchImages(newQuery, currentPage)
+}
+
+function getCurrentPage(pageNumber) {
+  currentPage = pageNumber
+  return fetchImages(currentQuery, pageNumber)
+}
+
+export { fetchImages, getNewQuery, getCurrentPage, currentPage }

@@ -35,8 +35,12 @@
 
       <div class="search-section">
         <form class="search-form" action="#" method="get">
-          <input class="search-field" type="search" name="search-field" placeholder="Search...">
-          <button class="search-button" type="submit" aria-label="Search image" data-theme="search-button"></button>
+          <button class="clear-button hidden" type="button" aria-label="Clear the search field"
+            title="Click to clear the search field" data-theme="clear-button">x</button>
+          <input class="search-field" type="search" name="search-field" placeholder="Search..."
+            aria-label="Search field" autofocus>
+          <button class="search-button" type="submit" aria-label="Search image"
+            title="Click to submit your search request" data-theme="search-button"></button>
         </form>
         <span class="theme-switcher" title="Click to switch page color theme" data-theme="theme-switcher"></span>
       </div>
@@ -57,6 +61,8 @@
     <article class="container container-main">
       <h2 class="gallery-title"></h2>
 
+      <ul class="pagination hidden"></ul>
+      <p class="total-pages hidden"></p>
       <figure class="gallery"></figure>
       <!-- /.gallery -->
 
@@ -72,15 +78,19 @@
   <!--============ Footer ============-->
 
   <footer class="footer" data-theme="footer">
-    <div class="container">
+    <div class="container container-footer">
 
       <p class="copyright">
         <small>&copy;</small>
         <small>2022</small>
 
         <a href="https://github.com/dobkir" target="_blank"><span class="github-icon"
+            title="Click to visit the author's GitHub"
             data-theme="github-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>dobkir</a>
       </p>
+
+      <a class="rs-school-link" href="https://rs.school/js/" target="_blank" title="Click to visit RS-School website"
+        data-theme="rs-school-link"></a>
 
     </div>
     <!-- /.container -->

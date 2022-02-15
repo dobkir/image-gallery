@@ -1,0 +1,105 @@
+.search-form {
+  position: relative;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 380px;
+  height: 40px;
+}
+
+.search-field {
+  width: 90%;
+  height: 100%;
+  padding: 8px 62px 8px 12px;
+
+  border: 1px solid lighten($dark-color, 50%);
+  border-radius: 18px;
+  outline: none;
+
+  @extend %transition;
+
+  &:focus {
+    color: $brand-color;
+
+    border: 1px solid $brand-color;
+    box-shadow: 0 0 6px 3px rgba($brand-color, 0.5);
+
+    &::placeholder {
+      color: $brand-color;
+    }
+
+    +.search-button {
+      @include mask("../assets/svg/search.svg", cover, $brand-color, $brand-color);
+    }
+  }
+}
+
+.clear-button {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+
+  color: $brand-color;
+
+  background-color: transparent;
+  border: 2px solid $brand-color;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+
+  transform: translateY(-50%);
+  @extend %transition;
+
+  &:hover,
+  &:focus {
+    color: lighten($brand-color, 25%);
+
+    border-color: lighten($brand-color, 25%);
+  }
+
+  &:active {
+    color: darken($brand-color, 10%);
+
+    border-color: darken($brand-color, 10%);
+  }
+}
+
+.clear-button-light {
+  color: $dark-color;
+
+  border-color: $dark-color;
+
+  &:hover,
+  &:focus {
+    color: lighten($brand-color, 25%);
+
+    border-color: lighten($brand-color, 25%);
+  }
+
+  &:active {
+    color: darken($brand-color, 10%);
+
+    border-color: darken($brand-color, 10%);
+  }
+}
+
+.search-button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+
+  height: 28px;
+  width: 28px;
+
+  @include mask("../assets/svg/search.svg", cover, $brand-color, $brand-color);
+  border: none;
+  cursor: pointer;
+
+  transform: translateY(-50%);
+  @extend %transition;
+}
+
+.search-button-light {
+   @include mask("../assets/svg/search.svg", cover, $dark-color, $brand-color);
+}

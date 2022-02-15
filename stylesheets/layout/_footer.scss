@@ -4,12 +4,12 @@
   right: 0;
   bottom: 0;
 
-  background: $dark-color;
-  outline: 2px solid $brand-color;
-
-  @extend %flex-centered-items-space-btw;
+  display: flex;
   width: 100%;
   height: 40px;
+
+  background: $dark-color;
+  outline: 2px solid $brand-color;
 
   @include media-tablet-portrait {
     flex-direction: column;
@@ -20,6 +20,10 @@
 .footer-light {
   background: $light-color;
   outline-color: $dark-color;
+}
+
+.container-footer {
+  @extend %flex-centered-items-space-btw;
 }
 
 .copyright {

@@ -1,4 +1,8 @@
-import { getData } from "./get-data.js"
+import { getNewQuery } from "./fetch-images.js"
+
+const searchForm = document.querySelector('.search-form')
+const searchField = searchForm.querySelector('.search-field')
+const resetButton = searchForm.querySelector('.clear-button')
 
 export default function handleSearchForm() {
 
@@ -11,10 +15,26 @@ export default function handleSearchForm() {
   function handleFormSubmit(event) {
     event.preventDefault()
     const data = getRequestTextFromInput(event.target)
-    const searchResult = getData(data)
+    const searchResult = getNewQuery(data)
     return searchResult
   }
 
-  const searchForm = document.querySelector('.search-form')
+  function showResetButton() {
+    if (searchField.value.length) {
+      resetButton.classList.remove('hidden')
+    } else {
+      resetButton.classList.add('hidden')
+    }
+  }
+
+  function resetInput() {
+    searchField.value = searchField.defaultValue
+    showResetButton()
+  }
+
   searchForm.addEventListener('submit', handleFormSubmit)
+
+  searchField.addEventListener('keyup', showResetButton)
+  searchField.addEventListener('click', showResetButton)
+  resetButton.addEventListener('click', resetInput)
 }

@@ -28,14 +28,34 @@
   color: $dark-color;
 }
 
-.gallery-title {
-  font: $section-title-font
-}
-
 .search-field {
   font: $form-font;
 }
 
+.gallery-title {
+  font: $section-title-font;
+}
+
+.page-link,
+.prev-page,
+.next-page {
+font: $form-font;
+
+  &:hover,
+  &:focus {
+    color: lighten($brand-color, 25%);
+  }
+
+  &:active {
+    color: darken($brand-color, 10%);
+  }
+}
+
 .footer {
   font: $form-font;
+}
+
+.active-link{
+  color: $brand-color;
+  text-shadow: 1px 1px 2px rgba($light-color, 1);
 }
