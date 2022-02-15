@@ -2,9 +2,18 @@ import { getNewQuery } from "./fetch-images.js"
 
 const searchForm = document.querySelector('.search-form')
 const searchField = searchForm.querySelector('.search-field')
+const searchButton = searchForm.querySelector('.search-button')
 const resetButton = searchForm.querySelector('.clear-button')
 
-export default function handleSearchForm() {
+function toggleSearchButton() {
+  if (searchButton.disabled) {
+    searchButton.disabled = false
+  } else {
+    searchButton.disabled = true
+  }
+}
+
+function handleSearchForm() {
 
   function getRequestTextFromInput(formNode) {
     const data = new FormData(formNode)
@@ -15,8 +24,14 @@ export default function handleSearchForm() {
   function handleFormSubmit(event) {
     event.preventDefault()
     const data = getRequestTextFromInput(event.target)
-    const searchResult = getNewQuery(data)
-    return searchResult
+    if (data) {
+      const searchResult = getNewQuery(data)
+      return searchResult
+    } else {
+      toggleSearchButton()
+      alert("You can't send an empty request")
+    }
+    toggleSearchButton()
   }
 
   function showResetButton() {
@@ -38,3 +53,5 @@ export default function handleSearchForm() {
   searchField.addEventListener('click', showResetButton)
   resetButton.addEventListener('click', resetInput)
 }
+
+export { toggleSearchButton, handleSearchForm }

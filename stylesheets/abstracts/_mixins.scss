@@ -24,6 +24,11 @@
     background-color: lighten($hover-color, 25%);
   }
 
+  &:disabled,
+  &[disabled] {
+    background-color: $disabler-color;
+  }
+
   &:active {
     background-color: darken($hover-color, 10%);
   }

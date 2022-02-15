@@ -593,6 +593,9 @@ figure {
 .logo:hover, .logo:focus {
   background-color: #ffd280;
 }
+.logo:disabled, .logo[disabled] {
+  background-color: #b3b3b3;
+}
 .logo:active {
   background-color: #cc8400;
 }
@@ -622,6 +625,9 @@ figure {
 }
 .logo-light:hover, .logo-light:focus {
   background-color: #ffd280;
+}
+.logo-light:disabled, .logo-light[disabled] {
+  background-color: #b3b3b3;
 }
 .logo-light:active {
   background-color: #cc8400;
@@ -654,6 +660,9 @@ figure {
 .theme-switcher:hover, .theme-switcher:focus {
   background-color: #ffd280;
 }
+.theme-switcher:disabled, .theme-switcher[disabled] {
+  background-color: #b3b3b3;
+}
 .theme-switcher:active {
   background-color: #cc8400;
 }
@@ -684,6 +693,9 @@ figure {
 .theme-switcher-light:hover, .theme-switcher-light:focus {
   background-color: #ffd280;
 }
+.theme-switcher-light:disabled, .theme-switcher-light[disabled] {
+  background-color: #b3b3b3;
+}
 .theme-switcher-light:active {
   background-color: #cc8400;
 }
@@ -713,7 +725,7 @@ figure {
 
 .pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 360px;
   margin: 0 auto;
@@ -730,6 +742,11 @@ figure {
 .prev-page,
 .next-page {
   cursor: pointer;
+}
+
+.prev-page,
+.page-link:nth-last-child(n+2) {
+  margin-right: 0.8rem;
 }
 
 .total-pages {
@@ -814,6 +831,9 @@ figure {
 .github-icon:hover, .github-icon:focus {
   background-color: #ffd280;
 }
+.github-icon:disabled, .github-icon[disabled] {
+  background-color: #b3b3b3;
+}
 .github-icon:active {
   background-color: #cc8400;
 }
@@ -832,7 +852,55 @@ figure {
 .github-icon-light:hover, .github-icon-light:focus {
   background-color: #ffd280;
 }
+.github-icon-light:disabled, .github-icon-light[disabled] {
+  background-color: #b3b3b3;
+}
 .github-icon-light:active {
+  background-color: #cc8400;
+}
+
+.rs-school-link {
+  display: inline-block;
+  width: 70px;
+  height: 24px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #ffffff;
+  background-position: 0 50%;
+  -webkit-mask-image: url("../assets/svg/rs_school.svg");
+  mask-image: url("../assets/svg/rs_school.svg");
+  -webkit-mask-size: 70px 24px;
+  mask-size: 70px 24px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.rs-school-link:hover, .rs-school-link:focus {
+  background-color: #ffd280;
+}
+.rs-school-link:disabled, .rs-school-link[disabled] {
+  background-color: #b3b3b3;
+}
+.rs-school-link:active {
+  background-color: #cc8400;
+}
+
+.rs-school-link-light {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #1c1c1c;
+  background-position: 0 50%;
+  -webkit-mask-image: url("../assets/svg/rs_school.svg");
+  mask-image: url("../assets/svg/rs_school.svg");
+  -webkit-mask-size: 70px 24px;
+  mask-size: 70px 24px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.rs-school-link-light:hover, .rs-school-link-light:focus {
+  background-color: #ffd280;
+}
+.rs-school-link-light:disabled, .rs-school-link-light[disabled] {
+  background-color: #b3b3b3;
+}
+.rs-school-link-light:active {
   background-color: #cc8400;
 }
 
@@ -891,6 +959,9 @@ figure {
 }
 .search-field:focus + .search-button:hover, .search-field:focus + .search-button:focus {
   background-color: #ffd280;
+}
+.search-field:focus + .search-button:disabled, .search-field:focus + .search-button[disabled] {
+  background-color: #b3b3b3;
 }
 .search-field:focus + .search-button:active {
   background-color: #cc8400;
@@ -962,6 +1033,9 @@ figure {
 .search-button:hover, .search-button:focus {
   background-color: #ffd280;
 }
+.search-button:disabled, .search-button[disabled] {
+  background-color: #b3b3b3;
+}
 .search-button:active {
   background-color: #cc8400;
 }
@@ -970,6 +1044,9 @@ figure {
     height: 22px;
     width: 22px;
   }
+}
+.search-button:disabled, .search-button[disabled] {
+  cursor: progress;
 }
 
 .search-button-light {
@@ -985,6 +1062,9 @@ figure {
 }
 .search-button-light:hover, .search-button-light:focus {
   background-color: #ffd280;
+}
+.search-button-light:disabled, .search-button-light[disabled] {
+  background-color: #b3b3b3;
 }
 .search-button-light:active {
   background-color: #cc8400;

@@ -1,13 +1,17 @@
 import { loadGalleryTitle, loadGalleryImages, clearGallery, reportMissingData } from './load-gallery-images.js'
 import { toggleLoader } from './loader.js'
-import { showPagination } from './pagination.js'
+import { hidePagination, showPagination } from './pagination.js'
+import { queryVariants } from './popular-variants-query-images.js'
+import { toggleSearchButton } from './search.js'
 
-let currentQuery = 'latest'
+const randomQueryNumber = Math.floor(Math.random() * queryVariants.length)
+let currentQuery = queryVariants[randomQueryNumber]
 let currentPage = 1
 
 async function fetchImages(query = currentQuery, page = currentPage) {
   const accessKey = '8EnJm5o8GKeVQ_y02NuOD2VtMkZxPLkEJ-TVkNjSaMs'
   toggleLoader()
+  toggleSearchButton()
   let imagesPerPage = 12
   let imageOrientation = 'landscape'
   let url = 'https://api.unsplash.com/search/photos?query=' +
@@ -25,14 +29,23 @@ async function fetchImages(query = currentQuery, page = currentPage) {
     const res = await fetch(url)
 
     if (res.status != 200) {
-      alert(`HTTP-Error: ${res.status}. We are already working on it`)
+      if (res.status === 403) {
+        alert(`HTTP-Error: ${res.status}. There are too many queries per hour. Please, try again later!`)
+      } else {
+        alert(`HTTP-Error: ${res.status}. We are already working on it`)
+      }
       return null
     } else {
       const data = await res.json()
       const totalPages = data.total_pages
       const receivedImages = data.results
       clearGallery()
-      if (receivedImages.length === 0) reportMissingData()
+      toggleSearchButton()
+      if (receivedImages.length === 0) {
+        reportMissingData()
+        hidePagination()
+        console.log(receivedImages.length)
+      }
       if (currentQuery != query) {
         currentQuery = query
         getCurrentPage(1)

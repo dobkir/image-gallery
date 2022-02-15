@@ -8,7 +8,7 @@
 
 .pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   width: 360px;
@@ -26,6 +26,11 @@
 .prev-page,
 .next-page {
   cursor: pointer;
+}
+
+.prev-page,
+.page-link:nth-last-child(n+2) {
+  margin-right: 0.8rem;
 }
 
 .total-pages {

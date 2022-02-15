@@ -1,9 +1,21 @@
 import { currentPage, getCurrentPage } from "./fetch-images.js"
 
 const pagination = document.querySelector('.pagination')
+let totalPagesOutput = document.querySelector('.total-pages')
+
+function clearPagination() {
+  pagination.innerHTML = ''
+  hideTotalPagesNumber()
+}
+
+function hidePagination() {
+  clearPagination()
+  pagination.classList.add('hidden')
+  hideTotalPagesNumber()
+}
 
 function showPagination(total_pages) {
-  pagination.innerHTML = ''
+  clearPagination()
   pagination.classList.remove('hidden')
   let startPage = 1
   let endPage = total_pages
@@ -32,7 +44,7 @@ function showPagination(total_pages) {
     }
   }
 
-  outputTotalPagesNumber(total_pages)
+  if (total_pages) outputTotalPagesNumber(total_pages)
 
   let pageLinks = Array.from(Array((endPage + 1) - startPage).keys()).map(i => {
     if (startPage + i === currentPage) {
@@ -45,7 +57,7 @@ function showPagination(total_pages) {
   if (currentPage !== 1)
     pagination.insertAdjacentHTML('afterbegin', `<li class="prev-page"> &laquo; </li>`)
 
-  if (currentPage !== total_pages)
+  if (total_pages && currentPage !== total_pages)
     pagination.insertAdjacentHTML('beforeend', `<li class="next-page"> &raquo; </li>`)
 
 }
@@ -75,20 +87,27 @@ function showNextPage(event) {
   }
 }
 
-function outputTotalPagesNumber(totalPages) {
-  let totalPagesOutput = document.querySelector('.total-pages')
+function showTotalPagesNumber() {
   if (totalPagesOutput.classList.contains('hidden')) {
     totalPagesOutput.classList.remove('hidden')
   }
+}
+
+function hideTotalPagesNumber() {
+  totalPagesOutput.classList.add('hidden')
   totalPagesOutput.textContent = ''
+}
+
+function outputTotalPagesNumber(totalPages) {
+  totalPagesOutput.textContent = ''
+  showTotalPagesNumber()
   totalPagesOutput.textContent = `from ${totalPages} pages`
 }
 
-function listenPagination() {
-  pagination.addEventListener('click', showCurrentPage)
-  pagination.addEventListener('click', showPreviousPage)
-  pagination.addEventListener('click', showNextPage)
-}
+
+pagination.addEventListener('click', showCurrentPage)
+pagination.addEventListener('click', showPreviousPage)
+pagination.addEventListener('click', showNextPage)
 
 
-export { showPagination, listenPagination }
+export { showPagination, hidePagination }

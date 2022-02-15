@@ -125,6 +125,11 @@
     height: 22px;
     width: 22px;
   }
+
+  &:disabled,
+  &[disabled] {
+    cursor: progress;
+  }
 }
 
 .search-button-light {

@@ -19,6 +19,12 @@
 
 .container-footer {
   @extend %flex-centered-items-space-btw;
+
+
+  // @include media-phone {
+  //   flex-direction: column;
+  //   line-height: 1.5rem;
+  // }
 }
 
 .copyright {
@@ -47,4 +53,3 @@
 .github-icon-light {
   @include mask("../assets/svg/github.svg", 24px, $dark-color, $brand-color, 0 50%);
 }
-
