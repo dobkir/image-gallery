@@ -1,4 +1,4 @@
-import { getNewQuery } from "./fetch-images.js"
+import { setNewQuery } from "./get-data.js"
 
 const searchForm = document.querySelector('.search-form')
 const searchField = searchForm.querySelector('.search-field')
@@ -25,7 +25,7 @@ function handleSearchForm() {
     event.preventDefault()
     const data = getRequestTextFromInput(event.target)
     if (data) {
-      const searchResult = getNewQuery(data)
+      const searchResult = setNewQuery(data)
       return searchResult
     } else {
       toggleSearchButton()

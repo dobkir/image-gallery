@@ -1,16 +1,10 @@
-import { currentPage, getCurrentPage } from "./fetch-images.js"
+import { currentPage, setCurrentPage } from "./get-data.js"
 
 const pagination = document.querySelector('.pagination')
 let totalPagesOutput = document.querySelector('.total-pages')
 
 function clearPagination() {
   pagination.innerHTML = ''
-  hideTotalPagesNumber()
-}
-
-function hidePagination() {
-  clearPagination()
-  pagination.classList.add('hidden')
   hideTotalPagesNumber()
 }
 
@@ -60,6 +54,7 @@ function showPagination(total_pages) {
   if (total_pages && currentPage !== total_pages)
     pagination.insertAdjacentHTML('beforeend', `<li class="next-page"> &raquo; </li>`)
 
+  return pageLinks
 }
 
 function showCurrentPage(event) {
@@ -67,7 +62,7 @@ function showCurrentPage(event) {
 
   if (target.classList.contains('page-link')) {
     let currentPage = +target.textContent
-    getCurrentPage(currentPage)
+    setCurrentPage(currentPage)
   }
 }
 
@@ -75,7 +70,7 @@ function showPreviousPage(event) {
   const target = event.target
 
   if (target.classList.contains('prev-page')) {
-    getCurrentPage(currentPage - 1)
+    setCurrentPage(currentPage - 1)
   }
 }
 
@@ -83,7 +78,7 @@ function showNextPage(event) {
   const target = event.target
 
   if (target.classList.contains('next-page')) {
-    getCurrentPage(currentPage + 1)
+    setCurrentPage(currentPage + 1)
   }
 }
 
@@ -110,4 +105,4 @@ pagination.addEventListener('click', showPreviousPage)
 pagination.addEventListener('click', showNextPage)
 
 
-export { showPagination, hidePagination }
+export { showPagination }

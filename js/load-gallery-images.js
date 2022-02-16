@@ -30,7 +30,10 @@ function clearGallery() {
 }
 
 function reportMissingData() {
-  const message = `<div style="text-align: center;"><p>No matches found</p><p>Try to input another query</p></div>`
+  const message = `
+  <div style="text-align: center;">
+  <p>No matches found</p>
+  <p>Try to input another query</p></div>`
   gallery.insertAdjacentHTML('beforeend', message)
 }
 

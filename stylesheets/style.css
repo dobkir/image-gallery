@@ -913,6 +913,51 @@ figure {
   background-color: #cc8400;
 }
 
+.rs-school-link {
+  display: inline-block;
+  width: 70px;
+  height: 24px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #ffffff;
+  background-position: 0 50%;
+  -webkit-mask-image: url("../assets/svg/rs_school.svg");
+  mask-image: url("../assets/svg/rs_school.svg");
+  -webkit-mask-size: 70px 24px;
+  mask-size: 70px 24px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.rs-school-link:hover, .rs-school-link:focus {
+  background-color: #ffd280;
+}
+.rs-school-link:disabled, .rs-school-link[disabled] {
+  background-color: #b3b3b3;
+}
+.rs-school-link:active {
+  background-color: #cc8400;
+}
+
+.rs-school-link-light {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #1c1c1c;
+  background-position: 0 50%;
+  -webkit-mask-image: url("../assets/svg/rs_school.svg");
+  mask-image: url("../assets/svg/rs_school.svg");
+  -webkit-mask-size: 70px 24px;
+  mask-size: 70px 24px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.rs-school-link-light:hover, .rs-school-link-light:focus {
+  background-color: #ffd280;
+}
+.rs-school-link-light:disabled, .rs-school-link-light[disabled] {
+  background-color: #b3b3b3;
+}
+.rs-school-link-light:active {
+  background-color: #cc8400;
+}
+
 .search-form {
   position: relative;
   display: flex;
