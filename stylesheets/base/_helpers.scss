@@ -13,6 +13,19 @@
   padding-right: 20px; /* 3 */
 }
 
+.mask-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  display: block;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgba($dark-color, 0.5);
+}
+
 .hidden {
   display: none;
 }

@@ -11,8 +11,17 @@ function loadGalleryTitle(fetchingQuery) {
   galleryTitle.textContent = `Gallery: ${makeFirstCharUppercase(fetchingQuery)}`
 }
 
-function loadGalleryImages(imageURL, description) {
-  const image = `<img class="gallery-image" src="${imageURL}" alt="${description}" width="456" height="320">`
+function loadGalleryImages(
+  imageURL,
+  imageLink,
+  description,
+  creator,
+  location
+) {
+  const image = `
+  <a class="image-link" href="${imageLink}" target="_blank" data-theme="image-link" title="View the foto by ${creator} from ${location}">
+  <img class="gallery-image" src="${imageURL}" alt="${description}" width="456" height="320">
+  </a>`
   gallery.insertAdjacentHTML('beforeend', image)
 }
 

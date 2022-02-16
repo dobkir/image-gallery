@@ -44,7 +44,6 @@ async function fetchImages(query = currentQuery, page = currentPage) {
       if (receivedImages.length === 0) {
         reportMissingData()
         hidePagination()
-        console.log(receivedImages.length)
       }
       if (currentQuery != query) {
         currentQuery = query
@@ -52,7 +51,13 @@ async function fetchImages(query = currentQuery, page = currentPage) {
       }
       loadGalleryTitle(query)
       showPagination(totalPages)
-      receivedImages.map(image => loadGalleryImages(image.urls.regular, image.alt_description))
+      receivedImages.map(image => loadGalleryImages(
+        image.urls.regular,
+        image.links.html,
+        image.alt_description || "Beautiful image without description",
+        image.user.name || "Anonymous",
+        image.user.location || "planet Earth")
+      )
       toggleLoader()
     }
 
