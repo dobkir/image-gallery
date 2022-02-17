@@ -84,6 +84,8 @@
   height: 45px;
   margin: 0 0 0 2.2rem;
 
+  border: none;
+
   @extend %transition;
 
   @include mask("../assets/svg/light-theme-icon.svg");

@@ -4,6 +4,8 @@ $title-tablet-font: normal 700 1.5rem/2rem "Inter-Bold";
 $section-title-font: normal 400 1.5rem/2rem "Inter-Regular";
 $section-title-tablet-font: normal 400 1.3rem/1.6rem "Inter-Regular";
 $text-font: normal 400 1.125rem/2rem "Inter-Regular";
+$author-font: normal 400 1rem/1.2rem "Inter-Regular";
+$author-location-font: normal 400 0.8rem/1rem "Inter-Regular";
 $form-font: normal 400 1.25rem/2.2rem "Inter-Regular";
 
 
@@ -22,7 +24,7 @@ $brand-color: #ffa500 !default;
 
 /// Disabled element color
 /// @type Color
-$disabler-color: #b3b3b3 !default;
+$disable-color: #b3b3b3 !default;
 
 /// Container's maximum width
 /// @type Length

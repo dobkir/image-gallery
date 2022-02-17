@@ -11,42 +11,70 @@ function clearPagination() {
 function showPagination(total_pages) {
   clearPagination()
   pagination.classList.remove('hidden')
-  let startPage = 1
-  let endPage = total_pages
-  const maxPages = 9
 
-  if (total_pages <= maxPages) {
-    // total pages less than max so show all pages
-    startPage = 1
-    endPage = total_pages
+  // Ввожу массив номеров страниц
+  const pageNumbersArr = []
+
+  // Заполняю массив номеров страниц номерами, пока их число не будет равно
+  // общему числу страниц, которое получаю из API в аргументе 'total_pages'
+  // Итерацию начинаю с единицы, чтобы сразу корректно выводить нумерацию в UI (с 1, а не с 0)
+  for (let pageNumber = 1; pageNumber <= total_pages; pageNumber++) {
+    pageNumbersArr.push(pageNumber)
+  }
+
+  // Определяю крайнюю левую и крайнюю правую границы диапазона пагинации
+  // Определяю размер диапазона пагинации в константе 'paginationRange'
+  let leftmostPageNumber = 1
+  let rightmostPageNumber = total_pages
+  const paginationRange = 9
+
+  // Если общее кол-во страниц меньше или равно размеру диапазона пагинации
+  if (total_pages <= paginationRange) {
+    leftmostPageNumber = 1
+    rightmostPageNumber = paginationRange
+    // Если общее кол-во страниц превысило размер диапазона пагинации
   } else {
-    // total pages more than max so calculate start and end pages
-    let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2)
-    let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1
-    if (currentPage <= maxPagesBeforeCurrentPage) {
-      // current page near the start
-      startPage = 1
-      endPage = maxPages
-    } else if (currentPage + maxPagesAfterCurrentPage >= total_pages) {
-      // current page near the end
-      startPage = total_pages - maxPages + 1
-      endPage = total_pages
+    // Ввожу две новых переменных, которые определяют сколько номеров страниц
+    // должно быть до номера актуальной страницы, и сколько после него
+    let numbersBeforeCurrentPage = Math.floor(paginationRange / 2)
+    let numbersAfterCurrentPage = Math.ceil(paginationRange / 2) - 1
+
+    // Если номер актуальной страницы меньше, или равен числу номеров страниц,
+    // которые должны быть до него (например, первая страница), то крайний
+    // правый номер страницы будет равен размеру диапазона пагинации
+    if (currentPage <= numbersBeforeCurrentPage) {
+      leftmostPageNumber = 1
+      rightmostPageNumber = paginationRange
+      // Если номер актуальной страницы в сумме с числом номеров страниц, которые
+      // должны быть после него больше, ил равен общему кол-ву страниц, то крайнее
+      // левое число диапазона будет общее кол - во страниц вычесть размер диапазона пагинации + 1
+    } else if ((currentPage + numbersAfterCurrentPage) >= total_pages) {
+      leftmostPageNumber = total_pages - paginationRange + 1
+      rightmostPageNumber = total_pages
+      // Во всех остальных случаях крайний левый и крайний правый номер страницы
+      // вычисляются по обычному алгоритсу
     } else {
-      // current page somewhere in the middle
-      startPage = currentPage - maxPagesBeforeCurrentPage
-      endPage = currentPage + maxPagesAfterCurrentPage
+      leftmostPageNumber = currentPage - numbersBeforeCurrentPage
+      rightmostPageNumber = currentPage + numbersAfterCurrentPage
     }
   }
 
-  if (total_pages) outputTotalPagesNumber(total_pages)
+  // Вывод пагинации в UI
+  const gettingPagination = pageNumbersArr
+    // Определяю диапазон вывода номеров страниц
+    .filter(pageNumber => pageNumber >= leftmostPageNumber && pageNumber <= rightmostPageNumber)
+    // Вывожу определённый выше диапазон через теги в UI
+    .map(pageNumber => {
+      // Номер страницы в выводимом диапазоне, который совпадает с номером страницы, отображаемой сейчас на экране,
+      // стилизую как активную ссылку, остальные выводятся как обычно
+      if (pageNumber === currentPage) {
+        return pagination.insertAdjacentHTML('beforeend', `<li class="page-link active-link">${pageNumber}</li>`)
+      } else {
+        return pagination.insertAdjacentHTML('beforeend', `<li class="page-link">${pageNumber}</li>`)
+      }
+    })
 
-  let pageLinks = Array.from(Array((endPage + 1) - startPage).keys()).map(i => {
-    if (startPage + i === currentPage) {
-      pagination.insertAdjacentHTML('beforeend', `<li class="page-link active-link">${startPage + i}</li>`)
-    } else {
-      pagination.insertAdjacentHTML('beforeend', `<li class="page-link">${startPage + i}</li>`)
-    }
-  })
+  if (total_pages) outputTotalPagesNumber(total_pages)
 
   if (currentPage !== 1)
     pagination.insertAdjacentHTML('afterbegin', `<li class="prev-page"> &laquo; </li>`)
@@ -54,7 +82,7 @@ function showPagination(total_pages) {
   if (total_pages && currentPage !== total_pages)
     pagination.insertAdjacentHTML('beforeend', `<li class="next-page"> &raquo; </li>`)
 
-  return pageLinks
+  return gettingPagination
 }
 
 function showCurrentPage(event) {

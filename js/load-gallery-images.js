@@ -14,14 +14,31 @@ function loadGalleryTitle(fetchingQuery) {
 function loadGalleryImages(
   imageURL,
   imageLink,
+  imageDownloadLink,
   description,
-  creator,
-  location
+  authorName,
+  authorAvatarSmall,
+  authorPageLink,
+  userLocation
 ) {
   const image = `
-  <a class="image-link" href="${imageLink}" target="_blank" data-theme="image-link" title="View the foto by ${creator} from ${location}">
-  <img class="gallery-image" src="${imageURL}" alt="${description}" width="456" height="320">
-  </a>`
+  <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="gallery-image_container">
+    <a class="image-link" href="${imageLink}" target="_blank" data-theme="image-link" title="View the foto by ${authorName} from ${userLocation}" itemprop="contentUrl">
+      <img class="gallery-image" src="${imageURL}" alt="${description}" width="456" height="320" itemprop="thumbnailUrl">
+    </a>
+    <div class="gallery-image_info">
+      <a class="author-link" href="${authorPageLink}" target="_blank" itemprop="author" title="View the author's profile">
+        <img class="author-avatar" src="${authorAvatarSmall}" alt="Go to ${authorName} profile" width="32" height="32">
+        <p class="author-about">
+          <span class="author-name" data-theme="author-about">${authorName}</span>
+          <span class="author-location" itemprop="contentLocation" data-theme="author-about">from ${userLocation}</span>
+        </p>
+      </a>
+      <a class="download-link" href="${imageDownloadLink}" download rel="nofollow" title="Download this image">
+        <button class="download-icon"></button>
+      </a>
+    </div>
+  </figure>`
   gallery.insertAdjacentHTML('beforeend', image)
 }
 

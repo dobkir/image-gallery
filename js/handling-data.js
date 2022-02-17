@@ -4,17 +4,17 @@ import { toggleSearchButton } from './search.js'
 
 function handleData(query, fetchingData) {
   const totalPages = fetchingData.total_pages
-  const receivedImages = fetchingData.results
+  const fetchingImagesData = fetchingData.results
   clearGallery()
   toggleSearchButton()
 
-  if (receivedImages.length === 0) {
+  if (fetchingImagesData.length === 0) {
     reportMissingData()
   }
-
+  console.log(fetchingImagesData)
   loadGalleryTitle(query)
   showPagination(totalPages)
-  receivedImages.map(image => loadGalleryImages(
+  fetchingImagesData.map(image => loadGalleryImages(
     // Used manual adjustment of image sizes to improve proportions.
     // 'fm' - it's the image format; 'w' - the image width;
     // Also, for small format images can be used:
@@ -22,8 +22,11 @@ function handleData(query, fetchingData) {
     // or 'image.urls.thumb', which returns the photo in jpg format with a width of 200 pixels
     image.urls.raw + "&fm=jpg&w=456&fit=max",
     image.links.html,
+    image.links.download + "&force=true",
     image.alt_description || "Beautiful image without description",
     image.user.name || "Anonymous",
+    image.user.profile_image.small,
+    image.user.links.html,
     image.user.location || "planet Earth")
   )
 }

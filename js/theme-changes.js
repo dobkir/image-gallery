@@ -9,6 +9,7 @@ const lightTheme = {
   'search-button': 'search-button-light',
   'theme-switcher': 'theme-switcher-light',
   'image-link': 'image-link-light',
+  'author-about': 'author-about-light',
   'footer': 'footer-light',
   'github-icon': 'github-icon-light',
 }

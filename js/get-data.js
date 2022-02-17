@@ -11,7 +11,7 @@ async function getData(query = currentQuery, page = currentPage) {
   toggleLoader()
   toggleSearchButton()
   const accessKey = '8EnJm5o8GKeVQ_y02NuOD2VtMkZxPLkEJ-TVkNjSaMs'
-  const getRequest = '/search/photos?'
+  const endpoint = '/search/photos?'
   const imagesPerPage = 12
 
   const baseUrl = 'https://api.unsplash.com'
@@ -24,7 +24,7 @@ async function getData(query = currentQuery, page = currentPage) {
     orientation: 'landscape',
     client_id: accessKey,
   })
-  const url = baseUrl + getRequest + queryParams.toString()
+  const url = baseUrl + endpoint + queryParams.toString()
 
   // Requesting data from a remote server
   try {
