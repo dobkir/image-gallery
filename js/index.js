@@ -7,4 +7,3 @@ import { handleSearchForm } from './search.js';
 smoothScrollFunction()
 handleSearchForm()
 getData()
-
