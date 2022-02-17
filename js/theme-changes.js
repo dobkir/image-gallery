@@ -8,7 +8,7 @@ const lightTheme = {
   'clear-button': 'clear-button-light',
   'search-button': 'search-button-light',
   'theme-switcher': 'theme-switcher-light',
-  'author-about': 'author-about-light',
+  'download-button': 'download-button-light',
   'footer': 'footer-light',
   'github-icon': 'github-icon-light',
 }

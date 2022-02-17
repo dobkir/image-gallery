@@ -11,7 +11,7 @@ function handleData(query, fetchingData) {
   if (fetchingImagesData.length === 0) {
     reportMissingData()
   }
-  console.log(fetchingImagesData)
+
   loadGalleryTitle(query)
   showPagination(totalPages)
   fetchingImagesData.map(image => loadGalleryImages(

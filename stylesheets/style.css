@@ -1,4 +1,4 @@
-.search-button, .clear-button, .search-field, .download-icon, .author-link,
+.search-button, .clear-button, .search-field, .download-button, .author-link,
 .download-link, .gallery-image_info, .gallery-image, .theme-switcher, .logo, a {
   -webkit-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -900,11 +900,7 @@ figure {
   font: normal 400 0.8rem/1rem "Inter-Regular";
 }
 
-.author-about-light {
-  color: #ffa500;
-}
-
-.download-icon {
+.download-button {
   margin-right: 12px;
   width: 32px;
   height: 32px;
@@ -920,13 +916,13 @@ figure {
   border: none;
   cursor: pointer;
 }
-.download-icon:hover, .download-icon:focus {
+.download-button:hover, .download-button:focus {
   background-color: #ffd280;
 }
-.download-icon:disabled, .download-icon[disabled] {
+.download-button:disabled, .download-button[disabled] {
   background-color: #b3b3b3;
 }
-.download-icon:active {
+.download-button:active {
   background-color: #cc8400;
 }
 

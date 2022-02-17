@@ -30,12 +30,12 @@ function loadGalleryImages(
       <a class="author-link" href="${authorPageLink}" target="_blank" itemprop="author" title="View the author's profile">
         <img class="author-avatar" src="${authorAvatarSmall}" alt="Go to ${authorName} profile" width="32" height="32">
         <p class="author-about">
-          <span class="author-name" data-theme="author-about">${authorName}</span>
+          <span class="author-name">${authorName}</span>
           <span class="author-location" itemprop="contentLocation" data-theme="author-about">from ${userLocation}</span>
         </p>
       </a>
       <a class="download-link" href="${imageDownloadLink}" download rel="nofollow" title="Download this image">
-        <button class="download-icon"></button>
+        <button class="download-button" data-theme="download-button"></button>
       </a>
     </div>
   </figure>`
