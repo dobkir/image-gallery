@@ -199,7 +199,3 @@
 
   @extend %transition;
 }
-
-.download-button-light {
-   @include mask("../assets/svg/download.svg", cover, $dark-color, $brand-color);
-}

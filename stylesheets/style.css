@@ -926,27 +926,6 @@ figure {
   background-color: #cc8400;
 }
 
-.download-button-light {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color: #1c1c1c;
-  background-position: center;
-  -webkit-mask-image: url("../assets/svg/download.svg");
-  mask-image: url("../assets/svg/download.svg");
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-}
-.download-button-light:hover, .download-button-light:focus {
-  background-color: #ffd280;
-}
-.download-button-light:disabled, .download-button-light[disabled] {
-  background-color: #b3b3b3;
-}
-.download-button-light:active {
-  background-color: #cc8400;
-}
-
 .footer {
   position: fixed;
   left: 0;

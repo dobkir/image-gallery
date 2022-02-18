@@ -35,7 +35,7 @@ function loadGalleryImages(
         </p>
       </a>
       <a class="download-link" href="${imageDownloadLink}" download rel="nofollow" title="Download this image">
-        <button class="download-button" data-theme="download-button"></button>
+        <button class="download-button"></button>
       </a>
     </div>
   </figure>`
