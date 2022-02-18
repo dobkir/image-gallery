@@ -66,7 +66,7 @@
 }
 
 // Media parameter for this project only
-@mixin media-this-project {
+@mixin media-tablet-this-project {
   @media (max-width: 612px) { @content; }
 }
 
@@ -76,7 +76,7 @@
 }
 
 // Media parameter for this project only
-@mixin phone-this-project {
+@mixin media-phone-this-project {
   @media (max-width: 390px) { @content; }
 }
 

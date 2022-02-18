@@ -11,11 +11,11 @@
     width: 320px;
   }
 
-  @include media-this-project {
+  @include media-tablet-this-project {
     height: 35px;
   }
 
-  @include phone-this-project {
+  @include media-phone-this-project {
     margin: 0.5rem 0;
     width: 275px;
     height: 30px;
@@ -48,7 +48,7 @@
     }
   }
 
-  @include phone-this-project {
+  @include media-phone-this-project {
     padding: 4px 48px 4px 10px;
   }
 }
@@ -121,7 +121,7 @@
   transform: translateY(-50%);
   @extend %transition;
 
-  @include phone-this-project {
+  @include media-phone-this-project {
     height: 22px;
     width: 22px;
   }

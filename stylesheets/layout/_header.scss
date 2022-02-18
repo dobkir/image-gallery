@@ -22,7 +22,7 @@
     justify-content: space-between;
   }
 
-  @include media-this-project {
+  @include media-tablet-this-project {
     justify-content: center;
     flex-wrap: wrap;
     min-height: auto;
@@ -35,14 +35,14 @@
 }
 
 .logo-section {
-  @include media-this-project {
+  @include media-tablet-this-project {
     margin-left: 0;
     margin-right: auto;
   }
 }
 
 .search-section {
-  @include media-this-project {
+  @include media-tablet-this-project {
     margin-left: auto;
     margin-right: 0;
   }
@@ -61,7 +61,7 @@
     height: 45px;
   }
 
-  @include media-this-project {
+  @include media-tablet-this-project {
     width: 35px;
     height: 35px;
   }
@@ -95,7 +95,7 @@
     margin: 0 0 0 0.6rem;
   }
 
-  @include phone-this-project {
+  @include media-phone-this-project {
     width: 35px;
     height: 35px;
     margin: 0 0 0 0.3rem;

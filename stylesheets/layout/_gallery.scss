@@ -1,7 +1,7 @@
 .gallery-title {
   margin: 5rem auto auto 0;
 
-  @include media-this-project {
+  @include media-tablet-this-project {
     margin: 6rem auto auto 0;
   }
 }
@@ -11,13 +11,13 @@
   justify-content: center;
   align-items: center;
 
-  width: 360px;
+  width: 100%;
+  height: 2rem;
   margin: 0 auto;
 
   overflow: hidden;
 
-  @include media-phone {
-    width: 280px;
+  @include media-tablet-this-project {
     margin: 10px auto 0;
   }
 }
@@ -29,14 +29,55 @@
 }
 
 .prev-page,
+.next-page {
+  @include media-phone {
+    font: $author-font;
+  }
+
+  @include media-phone-this-project {
+    font: $author-location-font;
+  }
+}
+
+.prev-page,
 .page-link:nth-last-child(n+2) {
-  margin-right: 0.8rem;
+  margin-right: 0.7rem;
+
+  @include media-phone {
+    margin-right: 0.5rem;
+  }
+
+  @include media-phone-this-project {
+    margin-right: 0.4rem;
+  }
+}
+
+.page-link:nth-last-child(n+2) {
+  @include media-phone {
+    margin-right: 0.5rem;
+
+    font: $author-font;
+  }
+
+  @include media-phone-this-project {
+    margin-right: 0.4rem;
+
+    font: $author-location-font;
+  }
 }
 
 .total-pages {
   margin: 0 auto;
 
   text-align: center;
+
+  @include media-phone {
+    font: $author-font;
+  }
+
+  @include media-phone-this-project {
+    font: $author-location-font;
+  }
 }
 
 .gallery {
