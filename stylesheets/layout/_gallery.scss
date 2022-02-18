@@ -29,17 +29,6 @@
 }
 
 .prev-page,
-.next-page {
-  @include media-phone {
-    font: $author-font;
-  }
-
-  @include media-phone-this-project {
-    font: $author-location-font;
-  }
-}
-
-.prev-page,
 .page-link:nth-last-child(n+2) {
   margin-right: 0.7rem;
 
@@ -55,14 +44,10 @@
 .page-link:nth-last-child(n+2) {
   @include media-phone {
     margin-right: 0.5rem;
-
-    font: $author-font;
   }
 
   @include media-phone-this-project {
     margin-right: 0.4rem;
-
-    font: $author-location-font;
   }
 }
 
@@ -70,14 +55,6 @@
   margin: 0 auto;
 
   text-align: center;
-
-  @include media-phone {
-    font: $author-font;
-  }
-
-  @include media-phone-this-project {
-    font: $author-location-font;
-  }
 }
 
 .gallery {

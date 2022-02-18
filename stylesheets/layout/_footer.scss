@@ -19,12 +19,6 @@
 
 .container-footer {
   @extend %flex-centered-items-space-btw;
-
-
-  // @include media-phone {
-  //   flex-direction: column;
-  //   line-height: 1.5rem;
-  // }
 }
 
 .copyright {

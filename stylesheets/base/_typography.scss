@@ -43,6 +43,11 @@
   @include media-tablet-landscape {
     font: $section-title-tablet-font;
   }
+
+  @include media-phone {
+    font: $text-font;
+    line-height: 1.6rem;
+  }
 }
 
 .page-link,
@@ -57,6 +62,40 @@ font: $form-font;
 
   &:active {
     color: darken($brand-color, 10%);
+  }
+}
+
+.prev-page,
+.next-page {
+
+  @include media-phone {
+    font: $author-font;
+  }
+
+  @include media-phone-this-project {
+    font: $author-location-font;
+  }
+}
+
+.page-link:nth-last-child(n+2) {
+
+  @include media-phone {
+    font: $author-font;
+  }
+
+  @include media-phone-this-project {
+    font: $author-location-font;
+  }
+}
+
+.total-pages {
+
+  @include media-phone {
+    font: $author-font;
+  }
+
+  @include media-phone-this-project {
+    font: $author-location-font;
   }
 }
 
