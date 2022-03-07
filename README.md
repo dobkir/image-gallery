@@ -20,6 +20,8 @@ Pure template on JS/HTML5/SCSS. It was created without a task runner, without a 
 
 The site has a responsive design and is adapted for devices with different screen sizes.
 
+[The 7-1 Pattern](https://sass-guidelin.es/#architecture) of Sass architecture uses here.
+
 Features:<br>
 ✔ Smooth page scrolling<br>
 ✔ Switching the page theme dark / light<br>
