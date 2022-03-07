@@ -7,7 +7,10 @@
 [![MIT License][license-shield]][license-url]&nbsp;
 ![Repository size][repo-size-shield]
 
+### Gallery preview
 ![Website trailer][product-screenshot]
+### Gallery on mobile devices preview
+![Website on mobile devices trailer][product-screenshot-mobile_devices]
 
 <!-- WORK DESCRIPTION -->
 ## Work description
@@ -81,3 +84,4 @@ Project Link: [https://github.com/dobkir/image-gallery](https://github.com/dobki
 [languages-shield]: https://img.shields.io/github/languages/count/dobkir/image-gallery.svg?style=for-the-badge
 [main-language-shield]: https://img.shields.io/github/languages/top/dobkir/image-gallery.svg?logo=JavaScript&logoColor=f1e05a&style=for-the-badge&color=f1e05a
 [product-screenshot]: https://github.com/dobkir/trailers/blob/master/image-gallery_trailer/image-gallery_trailer.gif
+[product-screenshot-mobile_devices]: https://github.com/dobkir/trailers/blob/master/image-gallery_trailer/image-gallery_mobile_trailer.gif
