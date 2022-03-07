@@ -34,7 +34,7 @@ and also the name of the author, his avatar, and a link to his contact page.
 ## [Come here](https://dobkir.github.io/image-gallery/) to watch this web application on your Web Browser
 
 <!-- TOOLS -->
-### Built With
+### Built with
 
 - Languages<br>
 ![Languages][languages-shield]
