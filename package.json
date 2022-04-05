@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "image-gallery",
   "version": "1.0.0",
-  "description": "Photographer Portfolio Website",
+  "description": "Demonstration of Unsplash API capabilities",
   "author": "Pavel Kirillov <dobkir@gmail.com>",
   "license": "MIT",
   "homepage": "dobkir.github.io/image-gallery/",
